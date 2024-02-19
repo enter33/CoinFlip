@@ -56,9 +56,11 @@ chooseWindow::chooseWindow(QWidget *parent)
             //转到游戏界面
             levelWindow* levelScene = new levelWindow(i+1,this);
             this->hide();
+            levelScene->setGeometry(this->geometry());
             levelScene->show();
             connect(levelScene,&levelWindow::backBtnSignal,[=](){
                 levelScene->close();
+                this->setGeometry(levelScene->geometry());
                 delete levelScene;
                 this->show();
             });
