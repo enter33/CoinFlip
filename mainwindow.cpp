@@ -34,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
     //接收回退信号并处理
     connect(chooseScene,&chooseWindow::backBtnSignal,[=](){
         chooseScene->hide();//隐藏关卡选择界面
+        this->setGeometry(chooseScene->geometry());
         this->show();
     });
 
@@ -52,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
 
         QTimer::singleShot(500,[=](){
             this->hide();
+            chooseScene->setGeometry(this->geometry());
             chooseScene->show();
         });
 
