@@ -58,7 +58,7 @@ chooseWindow::chooseWindow(QWidget *parent)
             this->hide();
             levelScene->show();
             connect(levelScene,&levelWindow::backBtnSignal,[=](){
-                levelScene->hide();
+                levelScene->chose();
                 delete levelScene;
                 this->show();
             });
