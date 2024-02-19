@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     //创建选择关卡界面
-    chooseWindow* chooseScene = new chooseWindow(this);
+    chooseWindow* chooseScene = new chooseWindow();
 
     //接收回退信号并处理
     connect(chooseScene,&chooseWindow::backBtnSignal,[=](){
